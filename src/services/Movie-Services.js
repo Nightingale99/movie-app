@@ -10,12 +10,13 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 class MovieService {
-    constructor() {
-        this.api_key = '4468f3029a8edecefca8d91fa78b1d73';
-    }
     getResource(url) {
         return __awaiter(this, void 0, void 0, function* () {
-            const res = yield fetch(url);
+            const res = yield fetch(url, {
+                headers: {
+                    "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI0NDY4ZjMwMjlhOGVkZWNlZmNhOGQ5MWZhNzhiMWQ3MyIsInN1YiI6IjY1YTEzZmQ5Y2NkZTA0MDEyYjhiOGVkNiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.lZtgyiXy4FKk02PgoFpXvRze6nT6iNsJdIFZATz6YUg"
+                }
+            });
             return yield res.json();
         });
     }

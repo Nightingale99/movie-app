@@ -6,6 +6,7 @@
     box-shadow: 0px 4px 12px 0px #00000026;
     margin-left: 40px;
     margin-top: 20px;
+    flex-direction: row;
 }
 
 .movie:nth-child(odd){
@@ -31,7 +32,6 @@
 
 .movie-description {
     display: flex;
-    -ms-flex-direction: row;
     flex-direction: column;
     margin-left: 20px;
     margin-top: 6px;
@@ -83,8 +83,15 @@
     line-height: 22px;
     letter-spacing: 0px;
     text-align: left;
+    flex-grow: 1;
 }
 
 .hidden{
     display:none;
+}
+
+.ant-rate {
+    font-size: 15px;
+    align-self: flex-start;
+    margin-bottom: 10px;
 }
