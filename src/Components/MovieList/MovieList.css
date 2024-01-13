@@ -1,0 +1,6 @@
+.movie-list {
+    width: 1010px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
