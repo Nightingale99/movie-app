@@ -29,9 +29,9 @@ const Movie: React.FC<MovieProps> = (props: MovieProps) => {
     }
   }
 
-    console.log(props.movie)
   const movie_date = format(props.movie.release_date, 'd MMMM yyyy', {locale: ru});
   const picture_link: string = 'https://image.tmdb.org/t/p/w500/' + props.movie.backdrop_path;
+  
   return (
       <div className='movie'>
         <img className='movie-image' src={picture_link} alt="movie image" width={183} height={281} />

@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import MovieList from '../MovieList/MovieList';
 import MovieService from '../../services/Movie-Services';
+import { Spin, Alert, Flex } from 'antd';
+import {Offline, Online} from 'react-detect-offline';
 
 interface MovieData {
   results: [{
@@ -30,11 +32,18 @@ const App: React.FC<AppProps> = () => {
   }, []);
   if (isLoading){
     return(
-      <div>Loading...</div>
+      <Flex gap="small" vertical >
+      <Spin size='large' fullscreen/>
+      </Flex >
     )
   } else {
   return (
-    <MovieList movies={movies} />
+    <div>
+      <Offline><Alert message="У вас нет интернета, проверьте соединение" type='error'/></Offline>
+      <Online>
+        <MovieList movies={movies} /> 
+      </Online> 
+    </div>
   );
   }
 };

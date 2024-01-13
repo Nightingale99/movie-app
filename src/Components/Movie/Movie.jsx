@@ -21,7 +21,6 @@ const Movie = (props) => {
             return overview;
         }
     };
-    console.log(props.movie);
     const movie_date = (0, date_fns_1.format)(props.movie.release_date, 'd MMMM yyyy', { locale: locale_1.ru });
     const picture_link = 'https://image.tmdb.org/t/p/w500/' + props.movie.backdrop_path;
     return (<div className='movie'>

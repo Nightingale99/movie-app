@@ -38,6 +38,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const react_1 = __importStar(require("react"));
 const MovieList_1 = __importDefault(require("../MovieList/MovieList"));
 const Movie_Services_1 = __importDefault(require("../../services/Movie-Services"));
+const antd_1 = require("antd");
+const react_detect_offline_1 = require("react-detect-offline");
 const App = () => {
     const [movies, setMovies] = (0, react_1.useState)({ results: [{ title: '', release_date: '', overview: '', backdrop_path: '' }] });
     const [isLoading, setIsLoading] = (0, react_1.useState)(true);
@@ -51,10 +53,17 @@ const App = () => {
         fetchData();
     }, []);
     if (isLoading) {
-        return (<div>Loading...</div>);
+        return (<antd_1.Flex gap="small" vertical>
+      <antd_1.Spin size='large' fullscreen/>
+      </antd_1.Flex>);
     }
     else {
-        return (<MovieList_1.default movies={movies}/>);
+        return (<div>
+      <react_detect_offline_1.Offline><antd_1.Alert message="У вас нет интернета, проверьте соединение" type='error'/></react_detect_offline_1.Offline>
+      <react_detect_offline_1.Online>
+        <MovieList_1.default movies={movies}/> 
+      </react_detect_offline_1.Online> 
+    </div>);
     }
 };
 exports.default = App;

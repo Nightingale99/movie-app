@@ -6,6 +6,7 @@
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "antd": "^5.13.0",
     "date-fns": "^3.2.0",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
@@ -54,7 +55,8 @@
     "eslint-plugin-react": "^7.33.2",
     "husky": "^8.0.3",
     "lint-staged": "^15.2.0",
-    "prettier": "^3.1.1"
+    "prettier": "^3.1.1",
+    "react-detect-offline": "^2.4.5"
   },
   "lint-staged": {
     "*.[tsx,ts]": [

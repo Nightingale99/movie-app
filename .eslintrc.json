@@ -23,10 +23,5 @@
       "prettier"
   ],
   "rules": {
-  },
-  "overrides": [
-    {
-        "files":["*.ts", "*.tsx"]
-    }
-  ]
+  }
 }
